@@ -1,9 +1,9 @@
 def bfs(graph,start_node):
     visited=[]
-    queue=[start_node]
+    stack=[start_node]
 
-    while queue:
-        current_node=queue.pop(0)
+    while stack:
+        current_node=stack.pop(0)
 
         if current_node not in visited:
             print(f"Exploring node: {current_node}")
@@ -11,8 +11,8 @@ def bfs(graph,start_node):
 
             #.get() prevents errors if a node has no outgoing edges
             for neighbor in graph.get(current_node,[]):
-                if neighbor not in visited and neighbor not in queue:
-                    queue.append(neighbor)
+                if neighbor not in visited and neighbor not in stack:
+                    stack.append(neighbor)
     return visited
 
 #--------- User input section ----------
@@ -49,7 +49,7 @@ for node in student_graph:
 #Get the starting node
 start = input("\nEnter the starting node for BFS:")
 
-#Perform BFS
+#Perform DFS
 if start in student_graph:
     result=bfs(student_graph,start)
     print("\nBFS Traversal:",result)
