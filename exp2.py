@@ -1,4 +1,4 @@
-def bfs(graph,start_node):
+def dfs(graph,start_node):
     visited=[]
     stack=[start_node]
 
@@ -51,7 +51,7 @@ start = input("\nEnter the starting node for BFS:")
 
 #Perform DFS
 if start in student_graph:
-    result=bfs(student_graph,start)
-    print("\nBFS Traversal:",result)
+    result=dfs(student_graph,start)
+    print("\nDFS Traversal:",result)
 else:
     print("Starting node not found in the graph.")
