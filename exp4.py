@@ -7,4 +7,9 @@ def get_user_inputs():
         node=input("Node name:").strip().upper()
         h_val=float(input(f"Heuristic h({node}):"))
         heuristic[node]=h_val
+    # take input for graph edges
+    graph={node:[] for node in heuristic}
+    num_edges=int(input("\n Enter total number of directed edges:"))
+    print("\nEnter edges in format (from_node to_node weight):")
+    for i in range?num edges
         
