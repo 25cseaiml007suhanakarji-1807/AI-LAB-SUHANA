@@ -26,7 +26,7 @@ def astar(graph,heuristic,start,goal):
 
     while open_list:
         # select node with minimum f=g+h
-        current = min(open_list,key=lambda x:x[1] + heuristic[x[0]]
+        current = min(open_list,key=lambda x:x[1] + heuristic[x[0]])
         open_list.remove(current)
 
         current_node=current[0]
@@ -34,7 +34,7 @@ def astar(graph,heuristic,start,goal):
         # goal check & path reconstruction
         if current_node == goal:
             path=[goal]
-            while current_nde in came_from:
+            while current_node in came_from:
                 current_node = came_from[current_node]
                 path.append(current_node)
             path.reverse()
@@ -48,7 +48,7 @@ def astar(graph,heuristic,start,goal):
                 g_cost[neighbor]=new_cost
                 came_from[neighbor]=current_node
                 open_list.append((neighbor,new_cost))
-return None,float('inf')
+    return None,float('inf')
 # --- main program ---
 if __name__=="__main__":
     print("=== A* Algorithm Input Setup ===\n")
